@@ -72,7 +72,7 @@ async function processTikzScripts(scripts) {
 			} catch (err) {
 				console.log(err);
 				// Show the browser's image not found icon.
-				loader.outerHTML = "<img src='//invalid.site/img-not-found.png'/>";
+				loader.replaceWith(document.createRange().createContextualFragment(`<img src='//invalid.site/img-not-found.png'/>`).firstChild);
 				return;
 			}
 
